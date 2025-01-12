@@ -6,3 +6,21 @@ sealed class FormState {
     data class Success (val message: String) : FormState()
     data class Error (val message: String) : FormState()
 }
+
+data class InsertUiState(
+    val isEntryValid: FormErrorState = FormErrorState()
+)
+
+data class FormErrorState (
+    val nim: String? = null,
+    val nama: String? = null,
+    val alamat: String? = null,
+    val kelas: String? = null,
+    val gender: String? = null,
+    val angkatan: String? = null
+) {
+    fun isValid() : Boolean {
+        return nim == null && nama == null && alamat == null &&
+                kelas == null && gender == null && angkatan == null
+    }
+}
