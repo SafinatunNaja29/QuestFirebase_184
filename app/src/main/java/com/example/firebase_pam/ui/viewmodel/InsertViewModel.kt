@@ -8,6 +8,7 @@ sealed class FormState {
 }
 
 data class InsertUiState(
+    val insertUiEvent: MahasiswaEvent = MahasiswaEvent(),
     val isEntryValid: FormErrorState = FormErrorState()
 )
 
@@ -24,3 +25,12 @@ data class FormErrorState (
                 kelas == null && gender == null && angkatan == null
     }
 }
+
+data class MahasiswaEvent (
+    val nim: String = "",
+    val nama: String = "",
+    val alamat: String = "",
+    val kelas: String = "",
+    val jenisKelamin: String = "",
+    val angkatan: String = ""
+)
