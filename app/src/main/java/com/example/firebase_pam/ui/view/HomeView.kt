@@ -100,6 +100,7 @@ fun HomeScreen(
             retryAction = {viewModel.getMhs()}, modifier = Modifier.padding(innerPadding),
             onDetailClick = onDetailClick,
             onDeleteClick = {
+                viewModel.deleteMhs(it)
                 viewModel.getMhs()
             }
         )
@@ -128,6 +129,7 @@ fun HomeStatus(
                         onDeleteClick(it)
                     }
                 )
+
         is HomeUiState.Error -> OnError(retryAction, modifier = modifier.fillMaxSize(),
             message = homeUiState.exception.message?: "Error")
     }
