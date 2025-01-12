@@ -46,7 +46,7 @@ class HomeViewModel (
         }
     }
 
-    fun deleteM(mahasiswa: Mahasiswa) {
+    fun deleteMahasiswa(mahasiswa: Mahasiswa) {
         viewModelScope.launch {
             try {
                 mhs.deleteMahasiswa(mahasiswa)
