@@ -5,6 +5,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.firebase_pam.model.Mahasiswa
 import com.example.firebase_pam.repository.MahasiswaRepository
 import kotlinx.coroutines.launch
 
@@ -99,4 +100,13 @@ data class MahasiswaEvent (
     val kelas: String = "",
     val jenisKelamin: String = "",
     val angkatan: String = ""
+)
+
+fun MahasiswaEvent.toMhsModel(): Mahasiswa = Mahasiswa (
+    nim = nim,
+    nama = nama,
+    alamat = alamat,
+    kelas = kelas,
+    jenisKelamin = jenisKelamin,
+    angkatan = angkatan
 )
