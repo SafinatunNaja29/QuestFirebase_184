@@ -7,6 +7,7 @@ import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import com.example.firebase_pam.MahasiswaApplication
 import com.example.firebase_pam.ui.viewmodel.HomeViewModel
+import com.example.firebase_pam.ui.viewmodel.InsertViewModel
 
 
 object PenyediaViewModel{
@@ -15,7 +16,10 @@ object PenyediaViewModel{
             HomeViewModel(
                 MahasiswaApplication().container.mahasiswaRepository)
         }
-
+        initializer {
+            InsertViewModel(
+                MahasiswaApplication().container.mahasiswaRepository)
+        }
     }
 }
 
