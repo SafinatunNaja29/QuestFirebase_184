@@ -112,8 +112,8 @@ fun HomeStatus(
     homeUiState: HomeUiState,
     retryAction: () -> Unit,
     modifier: Modifier,
-    onDeleteClick: (String) -> Unit = {},
-    onDetailClick: (String) -> Unit
+    onDeleteClick: (Mahasiswa) -> Unit = {},
+    onDetailClick: (String) -> Unit = {}
 ){
     when(homeUiState){
         is HomeUiState.Loading -> OnLoading(modifier = modifier.fillMaxSize())
@@ -143,7 +143,7 @@ fun MhsLayout(
     mahasiswa: List<Mahasiswa>,
     modifier: Modifier = Modifier,
     onDetailClick: (Mahasiswa) -> Unit,
-    onDeleteClick: (String) -> Unit = {}
+    onDeleteClick: (Mahasiswa) -> Unit = {}
 ){
     LazyColumn(
         modifier = modifier,
@@ -157,7 +157,7 @@ fun MhsLayout(
                     .fillMaxWidth()
                     .clickable{ onDetailClick(mahasiswa) },
                 onDeleteClick ={
-                    onDeleteClick(it)
+                    onDeleteClick(mahasiswa)
                 }
             )
         }
