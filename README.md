@@ -12,3 +12,19 @@ Halaman Home setelah tambah data
 
 Firebase
 <img width="960" alt="Screenshot 2025-01-12 224845" src="https://github.com/user-attachments/assets/9876453f-23ec-4c17-bfda-9469124025d5" />
+
+-----------------------------------------------------------------------------
+
+Hasil UCP
+Home
+<img width="960" alt="Screenshot 2025-01-15 104510" src="https://github.com/user-attachments/assets/bfea8db7-d210-47c3-83b7-899075083a3f" />
+
+Tambah Data
+<img width="960" alt="Screenshot 2025-01-15 104639" src="https://github.com/user-attachments/assets/790fcf97-32fd-41e8-84b0-0553c12d1234" />
+<img width="960" alt="Screenshot 2025-01-15 104642" src="https://github.com/user-attachments/assets/168c21b3-15a8-450c-861e-c0276d7483d6" />
+
+Home Setelah Tambah Data
+<img width="960" alt="Screenshot 2025-01-15 104650" src="https://github.com/user-attachments/assets/07dffab5-9936-4ca5-b5bc-70be2fc6b756" />
+
+Firebase
+<img width="960" alt="Screenshot 2025-01-15 104708" src="https://github.com/user-attachments/assets/1cb08338-d510-4c03-91a9-5620e967861c" />
