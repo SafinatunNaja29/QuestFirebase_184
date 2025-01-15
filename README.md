@@ -23,6 +23,9 @@ Tambah Data
 <img width="960" alt="Screenshot 2025-01-15 104639" src="https://github.com/user-attachments/assets/790fcf97-32fd-41e8-84b0-0553c12d1234" />
 <img width="960" alt="Screenshot 2025-01-15 104642" src="https://github.com/user-attachments/assets/168c21b3-15a8-450c-861e-c0276d7483d6" />
 
+Detail
+<img width="960" alt="Screenshot 2025-01-15 115448" src="https://github.com/user-attachments/assets/e1c5d21f-4838-4ae2-89aa-345783596da3" />
+
 Home Setelah Tambah Data
 <img width="960" alt="Screenshot 2025-01-15 104650" src="https://github.com/user-attachments/assets/07dffab5-9936-4ca5-b5bc-70be2fc6b756" />
 
