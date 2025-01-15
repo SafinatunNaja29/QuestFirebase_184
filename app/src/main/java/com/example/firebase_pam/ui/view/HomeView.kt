@@ -101,7 +101,6 @@ fun HomeScreen(
             onDetailClick = onDetailClick,
             onDeleteClick = {
                 viewModel.deleteMhs(it)
-                viewModel.getMhs()
             }
         )
     }
@@ -113,7 +112,7 @@ fun HomeStatus(
     retryAction: () -> Unit,
     modifier: Modifier,
     onDeleteClick: (Mahasiswa) -> Unit = {},
-    onDetailClick: (String) -> Unit = {}
+    onDetailClick: (String) -> Unit
 ){
     when(homeUiState){
         is HomeUiState.Loading -> OnLoading(modifier = modifier.fillMaxSize())
@@ -123,8 +122,8 @@ fun HomeStatus(
                 MhsLayout(
                     mahasiswa = homeUiState.mahasiswa,
                     modifier = modifier.fillMaxWidth(),
-                    onDetailClick = {
-                        onDetailClick(it.nim) },
+                    onDetailClick = { mahasiswa ->
+                        onDetailClick(mahasiswa) },
                     onDeleteClick = {
                         onDeleteClick(it)
                     }
@@ -142,8 +141,8 @@ fun HomeStatus(
 fun MhsLayout(
     mahasiswa: List<Mahasiswa>,
     modifier: Modifier = Modifier,
-    onDetailClick: (Mahasiswa) -> Unit,
-    onDeleteClick: (Mahasiswa) -> Unit = {}
+    onDetailClick: (String) -> Unit,
+    onDeleteClick: (Mahasiswa) -> Unit
 ){
     LazyColumn(
         modifier = modifier,
@@ -155,7 +154,7 @@ fun MhsLayout(
                 mahasiswa = mahasiswa,
                 modifier = Modifier
                     .fillMaxWidth()
-                    .clickable{ onDetailClick(mahasiswa) },
+                    .clickable { onDetailClick(mahasiswa.nim) },
                 onDeleteClick ={
                     onDeleteClick(mahasiswa)
                 }
@@ -210,11 +209,11 @@ fun MhsCard(
                 style = MaterialTheme.typography.titleLarge
             )
             Text(
-                text = mahasiswa.kelas,
+                text = mahasiswa.alamat,
                 style = MaterialTheme.typography.titleLarge
             )
             Text(
-                text = mahasiswa.alamat,
+                text = mahasiswa.judulSkripsi,
                 style = MaterialTheme.typography.titleLarge
             )
         }

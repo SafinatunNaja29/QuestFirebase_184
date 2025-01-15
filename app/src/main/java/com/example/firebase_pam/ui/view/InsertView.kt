@@ -9,7 +9,9 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -132,6 +134,7 @@ fun InsertBodyMhs(
             onValueChange = onValueChange,
             errorState = uiState.isEntryValid,
             modifier = Modifier.fillMaxWidth()
+                .weight(1f)
         )
         Button(
             onClick = onClick,
@@ -164,7 +167,9 @@ fun FormMahasiswa(
     val kelas = listOf("A", "B", "C", "D", "E")
 
     Column(
-        modifier = modifier.fillMaxWidth()
+        modifier = modifier
+            .fillMaxWidth()
+            .verticalScroll(rememberScrollState())
     ) {
         OutlinedTextField(
             modifier = Modifier.fillMaxWidth(),
@@ -279,5 +284,52 @@ fun FormMahasiswa(
             text = errorState.angkatan ?: "",
             color = Color.Red
         )
+
+        OutlinedTextField(
+            modifier = Modifier.fillMaxWidth(),
+            value = mahasiswaEvent.judulSkripsi,
+            onValueChange = {
+                onValueChange(mahasiswaEvent.copy(judulSkripsi = it))
+            },
+            label = { Text("Judul Skripsi") },
+            isError = errorState.judulSkripsi != null,
+            placeholder = { Text("Masukkan Judul Skripsi") },
+        )
+        Text(
+            text = errorState.judulSkripsi ?: "",
+            color = Color.Red
+        )
+
+        OutlinedTextField(
+            modifier = Modifier.fillMaxWidth(),
+            value = mahasiswaEvent.dospemSatu,
+            onValueChange = {
+                onValueChange(mahasiswaEvent.copy(dospemSatu = it))
+            },
+            label = { Text("Dosen Pembimbing 1") },
+            isError = errorState.dospemSatu != null,
+            placeholder = { Text("Masukkan Nama Dosen") },
+        )
+        Text(
+            text = errorState.dospemSatu ?: "",
+            color = Color.Red
+        )
+
+        OutlinedTextField(
+            modifier = Modifier.fillMaxWidth(),
+            value = mahasiswaEvent.dospemDua,
+            onValueChange = {
+                onValueChange(mahasiswaEvent.copy(dospemDua = it))
+            },
+            label = { Text("Dosen Pembinging 2") },
+            isError = errorState.dospemDua != null,
+            placeholder = { Text("Masukkan Nama Dosen") },
+        )
+        Text(
+            text = errorState.dospemDua ?: "",
+            color = Color.Red
+        )
+
+
     }
 }
